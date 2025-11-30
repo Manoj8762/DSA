@@ -11,8 +11,24 @@ def check_arm(num):
         s1=s1+(remainder**c1)
         n=n//10
     return True if n1==s1 else False
-print(check_arm(153))
-print(check_arm(1633))
-print(check_arm(1634))
+#print(check_arm(153))
+#print(check_arm(1633))
+#print(check_arm(1634))
 
 # for 153 1 power len(153)+ 5 power len(153) + 3 power len(153)==150 then that number is armstrong      
+
+
+def ch_arm(num):
+    c=0
+    su=0
+    while num>0:
+        num=num//10
+        c+=1
+    while num>0:
+        remainder=num%10
+        su=su+(remainder**c)
+        num//=10
+    return  True if su==num else False
+print(ch_arm(153))
+print(ch_arm(1633))       
+        
