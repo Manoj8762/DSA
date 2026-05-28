@@ -29,6 +29,7 @@ def ch_arm(num):
         su=su+(remainder**c)
         num//=10
     return  True if su==num else False
+<<<<<<< HEAD
 #print(ch_arm(153))
 #print(ch_arm(1633))       
 
@@ -50,4 +51,8 @@ print(check_armstrong(153))
 print(check_armstrong(1633))
         
         
+=======
+print(ch_arm(153))
+print(ch_arm(1633))       
+>>>>>>> 4a6cc1fb1c73c27846510bed6f51a0267b6eaa47
         
