@@ -5,12 +5,16 @@ def partition(arr,low,high):
     while i<j:
         while arr[i]<=p and i<=high-1:
             i+=1
-        while arr[j]>=p and j>=low+1:
+        while arr[j]>p and j>=low+1:
             j-=1
-                                            # 10,5,77,9,2,1,7,14
+                                            #10,5,77,9,2,1,7,14
                                             #10,5,7,9,2,1,77,14
-                                            #10,5,7,9,2,1,77,14                                                                               
-                                            
+                                            #1,5,7,9,2,10,77,14
+                                            #1,5,2,9,7,10,77,14
+                                            #1,2,5,9,7,10,77,14
+                                            #1,2,5,7,9,10,77,14
+                                            #1,2,5,7,9,10,14,77  
+                                            #                                                                                           
         if i<j:                            
             arr[i],arr[j]=arr[j],arr[i]
     arr[low],arr[j]=arr[j],arr[low]
@@ -87,3 +91,21 @@ a=[2,2,5,6,7]
 h=len(a)-1
 l=0
 print(parti(a,l,h))
+
+
+
+def quicking(arr,l,h):
+    i=l
+    j=h
+    p=arr[l]
+    while i<j:
+        while arr[i]<=p and i<=h-1:
+            i+=1
+
+        while arr[j]>=p and j>=l+1:
+            j-=1
+
+        if i<j:
+            arr[j],arr[i]=arr[i],arr[j]
+    arr[l],arr[j]=arr[j],arr[l]
+    return j

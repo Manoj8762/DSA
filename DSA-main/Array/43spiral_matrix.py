@@ -1,27 +1,28 @@
 def spiral_matrix1(mat):
-    if not mat or len(mat[0])==0:
-        return []
-    left,right=0,len(mat)-1
-    top,bottom=0,len(mat[0])-1
     
-    while top<=bottom and left<=right:
-        for i in range(left,right+1):
-            print(mat[top][i], end=' ')
+    if not mat or not mat[0]:# first row is empty or  first colums is empty
+        return []
+    result=[]
+    left=0
+    top=0
+    right=len(mat[0])-1
+    bottom=len(mat)-1
+    while left<=right and top<=bottom: # 
+        for i in range(left,right+1):  # left->right
+            result.append(mat[top][i])
         top+=1
-        
-        for i in range(top,bottom+1):
-            print(mat[i][right],end=' ')
+        for j in range(top,bottom+1): #top->bottom
+            result.append(mat[j][right])
         right-=1
-        
-        if top<=bottom:
+        if top<=bottom: # if single row is availble in matrix then avoid the right->left
             for i in range(right,left-1,-1):
-                print(mat[bottom][i],end=' ')
+                result.append(mat[bottom][i])
             bottom-=1
-            
-        if left<=right:
-            for i in range(bottom,top-1,-1):
-                print(mat[i][left],end=' ')
+        if left<=right: # if single column is availble in matrix then avoid the bottom->top
+            for j in range(bottom,top-1,-1):
+                result.append(mat[i][left])
             left+=1
+    return result            
 mat=[
     [1,2,3,4],
     [5,6,7,8],

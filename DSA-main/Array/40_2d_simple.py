@@ -1,31 +1,20 @@
 def upper1(arr):
-    
     row=len(arr)
     col=len(arr[0])
     for i in range(row):
-        
         for j in range(col):
-            
-            if i<=j:
-                
+            if i<=j:   
                 print(arr[i][j], end='')
-            else:
-                
+            else:  
                 print('*', end='')
         print()
-
 a=[[5,10,8],
     [7,6,3],
     [2,1,9]]
 upper1(a)
 
-
-
 print('------------------------------------')
 print('------------------------------------')
-print('------------------------------------')
-print('------------------------------------')
-
 
 def lower1(arr):
     row=len(arr)
@@ -41,14 +30,9 @@ def lower1(arr):
 arr=[[5,10,8],
     [7,6,3],
     [2,1,9]]
-
 lower1(arr)
-
 print('------------------------------------')
 print('------------------------------------')
-print('------------------------------------')
-print('------------------------------------')
-
 
 def diagonal1(arr):
     row=len(arr)
@@ -70,6 +54,24 @@ diagonal1(arr)
 
 print('------------------------------------')
 print('------------------------------------')
+
+
+def diagonal2(arr):
+    row=len(arr)
+    col=len(arr[0])
+    for i in range(row):
+        for j in range(col):
+            if i+j==row-1:
+                print(arr[i][j], end='')
+            else:
+                print('*', end='')
+        print()
+
+arr=[[5,10,8],
+    [7,6,3],
+    [2,1,9]]
+
+diagonal2(arr)
 print('------------------------------------')
 print('------------------------------------')
 

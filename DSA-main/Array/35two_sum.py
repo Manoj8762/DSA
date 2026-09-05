@@ -6,7 +6,7 @@ def two_sum1(arr,target):
     for i in range(len(arr)-1):
         for j in range(1,len(arr)):
             if arr[i]+arr[j]==target:
-                return i,j
+                return [i,j]
     return -1
 
 #print(two_sum1([5,9,1,2,4,15,6,3],13))
@@ -17,11 +17,10 @@ def two_sum1(arr,target):
 def two_sum2(arr,target):
     n=len(arr)
     hash_map={}
-    for i in range(0,n):
-        remaining=target-arr[i]
-        if remaining in hash_map:
-            return hash_map[remaining],i
-        
+    for i in range(n):
+        remain=target-arr[i]
+        if remain in hash_map:
+            return [i,hash_map[remain]]
         hash_map[arr[i]]=i
     return -1
 
